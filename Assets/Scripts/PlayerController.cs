@@ -29,8 +29,19 @@ public class PlayerController : MonoBehaviour
         //Uses the RigidBody velocity command to move the player forward endlessly
         myRB.velocity = new Vector3(moveSpeed, myRB.velocity.y, 0);
 
+        if (Input.GetKey(KeyCode.A))
+        {
+            myRB.velocity = new Vector3(myRB.velocity.x , myRB.velocity.y, 1);
+        }
+
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            myRB.velocity = new Vector3(myRB.velocity.x, myRB.velocity.y, -1);
+        }
+
         //Uses the RB to make the player jump
-        if(Input.GetButtonDown("Jump") && onGround)
+        if (Input.GetButtonDown("Jump") && onGround)
         {
             myRB.velocity = new Vector3(myRB.velocity.x, jumpPower, 0);            
         }
