@@ -18,6 +18,8 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //take the scoreValue variable and +1
+        UiController.scoreValue += 1;
         Destroy(gameObject);
     }
 
