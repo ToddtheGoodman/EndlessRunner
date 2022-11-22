@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
 
     public Rigidbody myRB;
 
-    public float moveSpeed;
-    public float jumpPower;
+    public float moveSpeed;    
+    public static int jumpPower;
 
     public bool onGround;
 
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        jumpPower = 5;
     }
 
     // Update is called once per frame
