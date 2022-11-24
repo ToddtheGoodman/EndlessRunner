@@ -18,9 +18,27 @@ public class jumpPowerUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //make me jump x2 higher
-        PlayerController.jumpPower *= 2;
-        Destroy(gameObject);
+
+        StartCoroutine(jumpCooldown());
+
+        //turn off the mesh renderer       
+               
     }
 
+    IEnumerator jumpCooldown()
+    {
+        print("Cooldown test");
+
+        //double my jump power
+        PlayerController.jumpPower *= 2;
+
+        //wait 2 seconds
+        yield return new WaitForSeconds(2);
+
+        //half my jump power
+        PlayerController.jumpPower /= 2;
+
+        Destroy(gameObject);
+    }
+    
 }
