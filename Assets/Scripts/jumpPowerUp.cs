@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class jumpPowerUp : MonoBehaviour
 {
+    MeshRenderer ren;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        ren = GetComponent<MeshRenderer>();
     }
 
     // Update is called once per frame
@@ -21,7 +23,8 @@ public class jumpPowerUp : MonoBehaviour
 
         StartCoroutine(jumpCooldown());
 
-        //turn off the mesh renderer       
+        //turn off the mesh renderer
+        ren.enabled = false;
                
     }
 
